@@ -7,10 +7,10 @@ My aim is to collate some of my recent projects, experiments and ideas and to sh
 [ZoomProject](https://github.com/AndrewFormosa/ZoomExample.git)
 
 ###Projects
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| First Header  | Second Header | First Header  | Second Header |
+| ------------- | ------------- | ------------- | ------------- |
+| Content Cell  | Content Cell  |Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |Content Cell  | Content Cell  |
 
 ## Welcome to GitHub Pages
 
