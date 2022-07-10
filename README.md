@@ -8,7 +8,6 @@ My aim is to collate some of my recent projects, experiments and ideas and to sh
 
 ### Projects
 
-
 |![Image](ZoomPic1.PNG)  | ![Image](ZoomPic1.PNG) | ![Image](ZoomPic1.PNG)  |![Image](ZoomPic1.PNG) |
 | ------------- | ------------- | ------------- | ------------- |
 
