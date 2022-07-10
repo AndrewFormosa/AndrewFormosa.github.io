@@ -8,8 +8,9 @@ My aim is to collate some of my recent projects, experiments and ideas and to sh
 
 ### Projects
 
-###### table
+
 |![Image](ZoomPic1.PNG)  | ![Image](ZoomPic1.PNG) | ![Image](ZoomPic1.PNG)  |![Image](ZoomPic1.PNG) |
+
 | ------------- | ------------- | ------------- | ------------- |
 | [ZoomProject](https://github.com/AndrewFormosa/ZoomExample.git) |[ZoomProject](https://github.com/AndrewFormosa/ZoomExample.git)  |[ZoomProject](https://github.com/AndrewFormosa/ZoomExample.git)  |[ZoomProject](https://github.com/AndrewFormosa/ZoomExample.git)  |
 
