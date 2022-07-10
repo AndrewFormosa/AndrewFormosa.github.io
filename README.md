@@ -10,8 +10,8 @@ My aim is to collate some of my recent projects, experiments and ideas and to sh
 
 
 |![Image](ZoomPic1.PNG)  | ![Image](ZoomPic1.PNG) | ![Image](ZoomPic1.PNG)  |![Image](ZoomPic1.PNG) |
-
 | ------------- | ------------- | ------------- | ------------- |
+
 | [ZoomProject](https://github.com/AndrewFormosa/ZoomExample.git) |[ZoomProject](https://github.com/AndrewFormosa/ZoomExample.git)  |[ZoomProject](https://github.com/AndrewFormosa/ZoomExample.git)  |[ZoomProject](https://github.com/AndrewFormosa/ZoomExample.git)  |
 
 ## Welcome to GitHub Pages
