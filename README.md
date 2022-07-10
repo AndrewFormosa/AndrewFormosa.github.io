@@ -6,6 +6,12 @@ My aim is to collate some of my recent projects, experiments and ideas and to sh
 ![Image](ZoomPic1.PNG)
 [ZoomProject](https://github.com/AndrewFormosa/ZoomExample.git)
 
+###Projects
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/AndrewFormosa/AndrewFormosa.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
