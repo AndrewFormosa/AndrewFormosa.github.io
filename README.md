@@ -9,8 +9,7 @@ My aim is to collate some of my recent projects, experiments and ideas and to sh
 ### Projects
 |![Image](ZoomPic1.PNG)  | ![Image](ZoomPic1.PNG) | ![Image](ZoomPic1.PNG)  |![Image](ZoomPic1.PNG) |
 | ------------- | ------------- | ------------- | ------------- |
-| [ZoomProject](https://github.com/AndrewFormosa/ZoomExample.git) |https://user-images.githubusercontent.com/65806732/178145219-98318064-8265-4f83-ad70-1fe4f211e73b.mp4  |[ZoomProject](https://github.com/AndrewFormosa/ZoomExample.git)  |[ZoomProject](https://github.com/AndrewFormosa/ZoomExample.git)  |
-| Content Cell  | https://user-images.githubusercontent.com/65806732/178145421-24387132-6ef3-4a44-b277-320ed371f430.mp4 |Content Cell  |https://user-images.githubusercontent.com/65806732/178145219-98318064-8265-4f83-ad70-1fe4f211e73b.mp4  |
+| [ZoomProject](https://github.com/AndrewFormosa/ZoomExample.git) |[ZoomProject](https://github.com/AndrewFormosa/ZoomExample.git)  |[ZoomProject](https://github.com/AndrewFormosa/ZoomExample.git)  |[ZoomProject](https://github.com/AndrewFormosa/ZoomExample.git)  |
 
 ## Welcome to GitHub Pages
 
