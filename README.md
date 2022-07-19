@@ -4,7 +4,8 @@ After many years working in business management, I'm finally planning on changin
 My aim is to collate some of my recent projects, experiments and ideas and to showcase them on this page...at some point..
 
 ![Image](ZoomPic1.PNG)
-[ZoomProject](https://github.com/AndrewFormosa/ZoomExample.git)
+[Zoom Project Respo](https://github.com/AndrewFormosa/ZoomExample.git)
+[Zoom Project](https://andrewformosa.github.io/ZoomExample)
 
 ### Projects
 
