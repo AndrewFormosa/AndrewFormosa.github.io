@@ -7,9 +7,10 @@ My aim is to collate some of my recent projects, experiments and ideas and to sh
 [Zoom Project Respo](https://github.com/AndrewFormosa/ZoomExample.git)
 [Zoom Project](https://andrewformosa.github.io/ZoomExample)
 
-##projects 
+##projects
 
-|![Image](ZoomPic1.PNG)  |  |   | |
+
+|![Image](ZoomPic1.PNG)  |  ![Keybo_ScreenShot1](https://user-images.githubusercontent.com/65806732/179819698-1b7276a0-9a92-4aab-8712-893161a5f563.PNG) |   | |
 | ------------- | ------------- | ------------- | ------------- |
 | [Zoom Project](https://andrewformosa.github.io/ZoomExample) |  |   |  |
 ## Welcome to GitHub Pages
