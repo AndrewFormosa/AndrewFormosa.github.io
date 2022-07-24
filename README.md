@@ -1,4 +1,4 @@
-## <center>Andrew Formosa</center>
+## <centre>Andrew Formosa</centre>
 
 After many years working in business management, I'm finally planning on changing direction and starting down a new career path which incorporates my love of coding and application development which began with my first ZX Spectrum programs written at the age of 10 years old.
 My aim is to collate some of my recent projects, experiments and ideas and to showcase them on this page...at some point..
