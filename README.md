@@ -6,10 +6,9 @@ My aim is to collate some of my recent projects, experiments and ideas and to sh
 ##Some of my Projects
 
 <style>
-  img
-  {
-  width:100;
-  height:100;
+  img {
+  width:100px;
+  height:100px;
   }
 </style>
 
