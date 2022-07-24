@@ -8,7 +8,9 @@ My aim is to collate some of my recent projects, experiments and ideas and to sh
 
 
 
-|![Image](ZoomPic1.PNG)|![Keybo_512X512](https://user-images.githubusercontent.com/65806732/180639279-16b89ebc-b67c-4c83-aba0-dffc32d0964a.png)|![Billy_still1_right_16x16](https://user-images.githubusercontent.com/65806732/180639397-334156b6-7877-400d-870c-59c5eec1c7b0.png)|![BoxFace1_Full](https://user-images.githubusercontent.com/65806732/180639369-774c3ab3-1620-449d-bcbf-3742d1b9a025.png | width=100)|
+|![Image](ZoomPic1.PNG)|![Keybo_512X512](https://user-images.githubusercontent.com/65806732/180639279-16b89ebc-b67c-4c83-aba0-dffc32d0964a.png)|![FS_Logo](https://user-images.githubusercontent.com/65806732/180639587-aba9ac37-fc39-4059-9a20-9b06a59ff8ca.png)
+  | ![Breakout_Pic](https://user-images.githubusercontent.com/65806732/180639612-1e9bb95c-f97d-4543-a1d7-0f8fa16981a9.png)
+ |
 | ------------- | ------------- | ------------- | ------------- |
 | [Zoom Project](https://andrewformosa.github.io/ZoomExample) | |   |  |
 ## Welcome to GitHub Pages
