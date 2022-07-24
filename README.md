@@ -1,6 +1,13 @@
 <head>
   
-  </head>
+ <style>
+  img {
+  width:100px;
+  height:100px;
+  }
+</style> 
+  
+</head>
 
 ## <p align="center">Andrew Formosa</p>
 
@@ -9,12 +16,7 @@ My aim is to collate some of my recent projects, experiments and ideas and to sh
 
 ##Some of my Projects
 
-<style>
-  img {
-  width:100px;
-  height:100px;
-  }
-</style>
+
 
 |![Image](ZoomPic1.PNG)|![Keybo_ScreenShot1](https://user-images.githubusercontent.com/65806732/179819698-1b7276a0-9a92-4aab-8712-893161a5f563.PNG)|![FS_Logo](https://user-images.githubusercontent.com/65806732/179819989-dd114eee-cfcc-41ac-adab-ca25bc18779c.png)|![SkwidgeBack1](https://user-images.githubusercontent.com/65806732/179820076-820dc96d-0b65-48d7-b00c-38dafaff5a18.png)|
 | ------------- | ------------- | ------------- | ------------- |
