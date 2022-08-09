@@ -1,5 +1,5 @@
 
-## <p align="center">Andrew Formosa <a href="https://github.com/AndrewFormosa/CV.git">CV_Link</a></p>
+## <p align="center">Andrew Formosa  [cv link](https://andrewformosa.github.io/CV)</p>
 
 
 After so many years working in business management, I'm finally planning on changing direction and starting down a new career path which incorporates my love of coding and application development which began with my first ZX Spectrum programs written at the age of 10 years old.
