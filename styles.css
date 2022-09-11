@@ -55,7 +55,8 @@ margin: 0;
 border-radius: 0;
 }
 
-h1 { 
+h1 {
+    
     font-weight: normal;
     font-size: 5rem; 
 }
@@ -131,7 +132,20 @@ padding: 10px;
     
 }
 
-
+.projectSubElement>p{
+    height: 100%;
+    font-size: 1.2rem;
+    width:450px;
+    } 
+    
+    
+    .projectSubElement{
+        display: flex;
+ 
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 
 
 h2{
@@ -139,13 +153,18 @@ h2{
     font-size: 2rem;
     font-weight: normal;
     text-align: center;
+    margin-left: 15px;
+    margin-right:15px;
 }
 
 @media (min-width:450px) { 
  .nav-logo{
     display:none;
  }   
-    
+ 
+ video{
+    width:350px;
+}
  #navbar{
      display: block;
     position: fixed;
@@ -191,6 +210,10 @@ background-color:var(--shadeOfBlue);
         color: white;
         font-weight: bold;
     }
+
+video{
+    width:100%;
+}
 
 .myName{
     margin-top: 10px;
