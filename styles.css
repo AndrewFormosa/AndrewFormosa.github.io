@@ -185,7 +185,8 @@ h2{
     color: white;
     text-align: center;
     padding-top:14px;
-    width:100px;     
+    padding-left:7px;
+    padding-right:7px;     
 }
 
 #navbar>a.end{
