@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,600;1,300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Bouncy</title>
+</head>
+<body>
+      <div style="position:fixed; width:100%;top:0px;background-color:gray;height:50px;display: block;padding-top: 12px;padding-left: 10px;">  
+        <a  style="color:white;text-decoration: none;" href="./index.html">Home</a>
+    </div>
+    <h1 style="display: block; text-align: center;">Bouncy</h1>
+ 
+    </nav>
+
+
+    <section>
+        <h2>Learnt to use ZX 80 Assembly Language during my covid isolation</h2>
+        <div class="projectSubElement">
+            <p>Wrote a Z80 Assembly script to allow a sprite to move pixel by pixel
+                 around a screen, which can be challenging 
+                 with the ZX Spectrum due to it's graphics configuration and memory layout.</p>
+        <video controls  autoplay>
+            <source src="Fuse 2022-10-15 12-48-03.mp4"  type="video/mp4">    
+        </video>
+        </div>
+
+     
+
+
+        <h2>My Machine-code and Z80 Assembly</h2>
+
+
+
+        <div class="projectSubElement">
+            <textarea style="font-family: monospace;font-variant-numeric: tabular-nums; word-spacing:normal; width: 100%;background: black;color:white;font-size: 0.7rem;height:500px;" >
+001   0000                 DEVICE ZXSPECTRUM48
+002   0000                 org $8000
+003   8000             
+004   8000 C3 32 80        jp start
+005   8003             XPOS = 21 ; take value between 0 and 265 decimal
+006   8003             YPOS = 21 ; take vale between 0 and 168 decimal
+007   8003             
+008   8003             
+009   8003             COUNTER = $8;
+010   8003             DELAYVALUE = %00001010
+011   8003             
+012   8003             bitmap: 
+013   8003 3C              db %00111100
+014   8004 42              db %01000010
+015   8005 99              db %10011001
+016   8006 85              db %10000101
+017   8007 85              db %10000101
+018   8008 81              db %10000001
+019   8009 42              db %01000010
+020   800A 3C              db %00111100
+021   800B             
+022   800B             SCREENSTART = $4000
+023   800B             
+024   800B             
+025   800B             getposition: 
+026   800B             
+027   800B 3A 04 FF        ld a,($FF04)
+028   800E 47              ld b,a 
+029   800F 3A 05 FF        ld a,($FF05)
+030   8012 4F              ld c,a
+031   8013             
+032   8013                 ;set up e which will hold y5,y4,y3,x4,x3,x2,x1,x0
+033   8013 3E 00           ld a,$0 ; set a to 0
+034   8015 80              add b ; add on the x colomb co-ordinate from 4x-x0
+035   8016 1F              rra
+036   8017 1F              rra
+037   8018 1F              rra
+038   8019 E6 1F           and %00011111
+039   801B 5F              ld e,a ; e contains 0,0,0,x4,x3,x2,x1,x0
+040   801C                 ;now we need y5,y4, y3
+041   801C 79              ld a,c ; load c which holds the y corordianes into a
+042   801D E6 38           and %00111000 ; a now contains 0,0,y5,y4,y3,0,0,0
+043   801F 17              rla ; move this to the left twice
+044   8020 17              rla ; a now contains y5,y4,y3,0,0,0,0,0
+045   8021 83              add e ; add it to e - a is now y5,y4,y3,x4,x2,x1,x0
+046   8022 5F              ld e,a ; put it into e to complete e part of address
+047   8023             
+048   8023                 ;now we need d to hold 0,1,0,y7,y6,y2,y1,y0 in that order
+049   8023                 ;c holds the y co-ordinate y7,y6,y5,y4,y3,y2,y1,y0
+050   8023 79              ld a,c ; load c into a
+051   8024 E6 07           and %00000111 ; a holds 0,0,0,0,0,y2,y1,y0
+052   8026 57              ld d,a ; d now holds 0,0,0,0,0,y2,y1,y0
+053   8027 79              ld a,c 
+054   8028 E6 C0           and %11000000; a holds y7,y6,0,0,0,0,0,0
+055   802A 1F              rra ; move to the right three times
+056   802B 1F              rra;
+057   802C 1F              rra ; a holds 0,0,0,y7,y6,0,0,0
+058   802D 82              add d ; a holds 0,0,0,y7,y6,y2,y1,y0
+059   802E C6 40           add %01000000 ; a holds 0,1,0,y7,y6,y2,y1,y0
+060   8030 57              ld d,a; load result into d
+061   8031 C9              ret
+062   8032             
+063   8032             start: 
+064   8032 3E 01           ld a,$1
+065   8034 32 15 FF        ld ($FF15),a ;direction x  1 +ve, 0 -ve
+066   8037 3E 01           ld a,$1
+067   8039 32 16 FF        ld ($FF16),a ;direction y 1 +ve, 0 -ve
+068   803C 3E 64           ld a,100
+069   803E 32 10 FF        ld ($FF10),a
+070   8041 3E 15           ld a,21
+071   8043 32 11 FF        ld($FF11),a
+072   8046                
+073   8046             
+074   8046             move: 
+075   8046 21 03 80        ld hl,bitmap
+076   8049 3A 10 FF        ld a,($FF10)
+077   804C 32 04 FF        ld ($FF04),a ; store XPos at FF04
+078   804F 3A 11 FF        ld a,($FF11)
+079   8052 32 05 FF        ld($FF05),a ; store YPos at FF05
+080   8055             
+081   8055 3E 08           ld a,$8
+082   8057 32 00 FF        ld ($FF00),a ;counter for loop
+083   805A 3E 00           ld a,$0
+084   805C 32 01 FF        ld($FF01),a ; off set for sprite 
+085   805F                
+086   805F             loop:  
+087   805F                
+088   805F             
+089   805F CD 0B 80        call getposition ; takes bc (x,y) and returns values for de (graphics address)
+090   8062             
+091   8062                 ;set off set
+092   8062                 
+093   8062 3A 04 FF        ld a,($FF04) ; load x co-ord into a
+094   8065 E6 07          and %00000111;the 3 least sig figures
+095   8067 3C             inc a;
+096   8068 32 01 FF       ld ($FF01),a; load this value into the off set memory address
+097   806B                 ;call createsprites to create two diffrent sprites from the one sprite based on the x coordinate
+098   806B                
+099   806B                 ;create byte one and store it at $FF02
+100   806B             
+101   806B 7E              ld a,(hl)
+102   806C 32 02 FF        ld ($FF02),a
+103   806F 3E 00           ld a,$0
+104   8071 32 03 FF        ld ($FF03),a
+105   8074 3A 01 FF        ld a,($FF01)
+106   8077 3D              dec a
+107   8078 CA 98 80        jp z, shifted  
+108   807B 47              ld b,a
+109   807C 3A 02 FF        ld a,($FF02)
+110   807F             shiftfirstbyte:   
+111   807F 1F              rra
+112   8080 CB BF           res 7,a    
+113   8082 10 FB           djnz shiftfirstbyte
+114   8084 32 02 FF        ld ($FF02),a
+115   8087             
+116   8087 3A 01 FF        ld a,($FF01)
+117   808A             
+118   808A 47              ld b,a
+119   808B 3E 09           ld a,9
+120   808D 90              sub b
+121   808E 47              ld b,a
+122   808F 7E              ld a,(hl)
+123   8090             shiftsecondbyte: 
+124   8090 07              rlca
+125   8091 CB 87           res 0,a    
+126   8093 10 FB           djnz shiftsecondbyte
+127   8095 32 03 FF        ld ($FF03),a
+128   8098             
+129   8098             shifted: 
+130   8098               
+131   8098 3A 02 FF        ld a,($FF02) ; load first sprite byte into a
+132   809B 12              ld (de),a ; place a (sprite byte) into address from get position -de.
+133   809C 13              inc de
+134   809D 3A 03 FF        ld a,($FF03)
+135   80A0 12              ld(de),a ; place second (sprite byte)
+136   80A1             
+137   80A1                 ;get a sprite shift based on the x co-ordinate three least significant bits.
+138   80A1                 ;create a shifted sprite by 
+139   80A1             
+140   80A1 23              inc hl ; point to the next sprie byte
+141   80A2 3A 05 FF        ld a,($FF05); increase the y position for the next line of the sprite
+142   80A5 3C              inc a ; increase the y position for the next line of the sprite
+143   80A6 32 05 FF        ld ($FF05),a; increase the y position for the next line of the sprite
+144   80A9 3A 00 FF        ld a,($FF00); use memory location $FF00 to hold the counter
+145   80AC 3D              dec a ;decrement the counter
+146   80AD 32 00 FF        ld ($FF00),a ; put the counter poistion back
+147   80B0 20 AD           jr nz,loop
+148   80B2             
+149   80B2             ;delay start
+150   80B2 3E 0A           ld a,DELAYVALUE
+151   80B4 32 06 FF        ld($FF06),a 
+152   80B7 32 07 FF        ld($FF07),a
+153   80BA             delay: 
+154   80BA 3A 07 FF        ld a,($FF07)
+155   80BD 3D              dec a
+156   80BE 32 07 FF        ld($FF07),a
+157   80C1 20 F7           jr nz,delay
+158   80C3 3E 0A           ld a,DELAYVALUE
+159   80C5 3A 06 FF        ld a,($FF06)
+160   80C8 3D              dec a
+161   80C9 32 06 FF        ld ($FF06),a
+162   80CC 20 EC           jr nz,delay
+163   80CE             
+164   80CE             ;delete sprite
+165   80CE 3E 08           ld a,$8;counter
+166   80D0 32 00 FF        ld ($FF00),a ;counter for loop
+167   80D3 3A 10 FF        ld a,($FF10) ;x pos
+168   80D6 32 04 FF        ld ($FF04),a
+169   80D9 3A 11 FF        ld a,($FF11) ; y pos
+170   80DC 32 05 FF        ld ($FF05),a
+171   80DF             deleteloop: 
+172   80DF CD 0B 80        call getposition
+173   80E2 3E 00           ld a,$0
+174   80E4 12              ld (de),a ; place blank
+175   80E5 13              inc de
+176   80E6 3E 00           ld a,$0
+177   80E8 12              ld(de),a ; place blank
+178   80E9             
+179   80E9 3A 05 FF        ld a,($FF05); increase the y position for the next line of the sprite
+180   80EC 3C              inc a ; increase the y position for the next line of the sprite
+181   80ED 32 05 FF        ld ($FF05),a; increase the y position for the next line of the sprite
+182   80F0             
+183   80F0 3A 00 FF        ld a,($FF00); use memory location $FF00 to hold the counter
+184   80F3 3D              dec a ;decrement the counter
+185   80F4 32 00 FF        ld ($FF00),a ; put the counter poistion back
+186   80F7 20 E6           jr nz,deleteloop
+187   80F9             
+188   80F9                 ;increase x pos
+189   80F9              ;   ld a,($FF10)
+190   80F9               ;  cp 240
+191   80F9               ;  jr nc,skip
+192   80F9              ;   inc a
+193   80F9             ;skip:
+194   80F9               ;  ld($FF10),a
+195   80F9                 ;inc y pos
+196   80F9               ;  ld a,($FF11)
+197   80F9               ;  inc a
+198   80F9                ; ld ($FF11),a
+199   80F9             
+200   80F9             testxdirection: 
+201   80F9 3A 15 FF        ld  a,($FF15) ; the x direction
+202   80FC FE 00           cp $0
+203   80FE 20 13           jr nz, goright
+204   8100 3A 10 FF        ld a,($FF10)
+205   8103 3D              dec a
+206   8104 32 10 FF        ld ($FF10),a
+207   8107 FE 0A           cp 10
+208   8109 30 18           jr nc, testydirection
+209   810B 3E 01           ld a,1
+210   810D 32 15 FF        ld($FF15),a 
+211   8110 C3 23 81        jp testydirection
+212   8113             
+213   8113             goright: 
+214   8113 3A 10 FF        ld a,($FF10)
+215   8116 3C              inc a
+216   8117 32 10 FF        ld ($FF10),a
+217   811A FE DC           cp 220
+218   811C 38 05           jr c, testydirection
+219   811E 3E 00           ld a,0
+220   8120 32 15 FF        ld($FF15),a 
+221   8123             
+222   8123             
+223   8123             testydirection: 
+224   8123             
+225   8123 3A 16 FF        ld  a,($FF16) ; the y direction
+226   8126 FE 00           cp $0
+227   8128 20 13           jr nz, godown
+228   812A 3A 11 FF        ld a,($FF11)
+229   812D 3D              dec a
+230   812E 32 11 FF        ld ($FF11),a
+231   8131 FE 0A           cp 10
+232   8133 30 18           jr nc, finishedSettingDirection
+233   8135 3E 01           ld a,1
+234   8137 32 16 FF        ld($FF16),a 
+235   813A C3 4D 81        jp finishedSettingDirection
+236   813D             
+237   813D             godown: 
+238   813D 3A 11 FF        ld a,($FF11)
+239   8140 3C              inc a
+240   8141 32 11 FF        ld ($FF11),a
+241   8144 FE 96           cp 150
+242   8146 38 05           jr c, finishedSettingDirection
+243   8148 3E 00           ld a,0
+244   814A 32 16 FF        ld($FF16),a 
+245   814D             
+246   814D             
+247   814D             
+248   814D             
+249   814D             
+250   814D             
+251   814D             finishedSettingDirection: 
+252   814D             
+253   814D C3 46 80       jp move
+254   8150             
+255   8150             
+256   8150             
+257   8150 C9              ret
+258   8151             
+259   8151             
+260   8151                 ;Depoyment snapshot
+261   8151                 SAVESNA "graphics2.sna",start
+            
+            </textarea>
+
+   
+    </section>
+
+  
+
+</body>
+</html>
