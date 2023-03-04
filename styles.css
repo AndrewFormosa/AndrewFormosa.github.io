@@ -281,3 +281,7 @@ video{
     background-color:var(--shadeOfBlue);
     font-size: 1.1rem;
 }
+
+.project-title{
+    margin-top: 20px;
+    margin-bottom: 0;}
